@@ -1,0 +1,10 @@
+watchdog
+pymupdf
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-text-splitters
+faiss-cpu
+python-dotenv
+streamlit
