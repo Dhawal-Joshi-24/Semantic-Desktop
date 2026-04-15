@@ -24,30 +24,36 @@ Unlike traditional keyword search, this application utilizes an event-driven ing
    git clone [https://github.com/YOUR_USERNAME/Semantic-Desktop.git](https://github.com/YOUR_USERNAME/Semantic-Desktop.git)
    cd Semantic-Desktop
 
-Create a Virtual Environment:
+2. **Create a Virtual Environment:**
 
-Bash
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install Dependencies:
+```
 
-Bash
+3. **Install Dependencies:**
+
+```bash
 pip install -r requirements.txt
-Environment Variables:
+```
+
+4. **Environment Variables:**
 Create a .env file in the root directory and add your Google API Key:
 
-Code snippet
+##Code snippet
 GOOGLE_API_KEY="your_actual_api_key_here"
-🎯 Usage
+
+#🎯 Usage
 To run the application, you need to start two separate processes.
 
-1. Start the Background Watcher:
+1. **Start the Background Watcher:**
 This script will monitor the my_documents folder for new files and automatically update the local FAISS vector database.
 
-Bash
+```bash
 python watcher.py
-2. Start the Search Interface:
+```
+2. **Start the Search Interface:**
 Open a new terminal window, activate your venv, and run the Streamlit app.
 
-Bash
+```bash
 streamlit run search_app.py
