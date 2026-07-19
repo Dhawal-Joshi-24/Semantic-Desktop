@@ -20,15 +20,17 @@ Unlike traditional keyword search, this application utilizes an event-driven ing
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/Semantic-Desktop.git](https://github.com/YOUR_USERNAME/Semantic-Desktop.git)
-   cd Semantic-Desktop
 
-2. **Create a Virtual Environment:**
+```bash
+git clone [https://github.com/YOUR_USERNAME/Semantic-Desktop.git](https://github.com/YOUR_USERNAME/Semantic-Desktop.git)
+cd Semantic-Desktop 
+```
+
+3. **Create a Virtual Environment:**
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+venv\Scripts\activate  # On IOS use `source venv/bin/activate`
 ```
 
 3. **Install Dependencies:**
@@ -40,15 +42,14 @@ pip install -r requirements.txt
 4. **Environment Variables:**
 Create a .env file in the root directory and add your Google API Key:
 
-##Code snippet
+## Code snippet
 GOOGLE_API_KEY="your_actual_api_key_here"
 
-#🎯 Usage
+# 🎯 Usage
 To run the application, you need to start two separate processes.
 
 1. **Start the Background Watcher:**
 This script will monitor the my_documents folder for new files and automatically update the local FAISS vector database.
-
 ```bash
 python watcher.py
 ```
@@ -57,3 +58,14 @@ Open a new terminal window, activate your venv, and run the Streamlit app.
 
 ```bash
 streamlit run search_app.py
+```
+
+## 🚧 Limitations
+Requires an active internet connection to process file contents via the Gemini API.
+
+Initial indexing speed is constrained by API rate limits and the size of the uploaded files.
+
+## 🔮 Future Scope
+Local LLM Integration: Add support for local open-weight models (like Llama 3 via Ollama) to allow completely offline, privacy-first file organization.
+
+OS-Level Integration: Extend the tool to physically move or tag files within the Windows File Explorer directly, rather than just acting as a search interface.
